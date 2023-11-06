@@ -19,6 +19,10 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { BlotterViewComponent } from './pages/dashboard-page/blotter-view/blotter-view.component';
+import { FxRatesViewComponent } from './pages/dashboard-page/fx-rates-view/fx-rates-view.component';
+import { WidgetComponent } from './pages/dashboard-page/widget/widget.component';
+import { TradeService } from './services/trade.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     DashboardPageComponent,
     LoginPageComponent,
     NotFoundPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    BlotterViewComponent,
+    FxRatesViewComponent,
+    WidgetComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +49,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     UserService,
     AuthenticationService,
     AuthGuard,
+    TradeService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
